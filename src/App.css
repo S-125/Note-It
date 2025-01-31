@@ -1,93 +1,139 @@
-body{
-   height: 100vh;
-   background-color: #eff3b9;
-    opacity: 0.8;
-   background-size: 20px 20px;
-   background-image:  repeating-linear-gradient(0deg, rgb(236, 98, 98), rgb(236, 98, 98) 1px, #eef49e 1px,#ebf0a2);
+/* Overall Page Styling */
+body {
+  height: 100vh;
+  background-color: #edf2f7; /* Soft bluish-gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
 }
 
-
-.To-Do-List{
-  font-family: Arial, Helvetica, sans-serif;
+/* Notes Container */
+.To-Do-List {
   text-align: center;
-  margin-top: 100px;
+  width: 90%;
+  max-width: 650px;
+  background: #ffffff; /* Clean white card */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #c3dafe; /* Soft blue border */
+}
 
+/* Header */
+h1 {
+  font-size: 2.8rem;
+  color: #2c3e50; /* Dark navy */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
-h1{
-  font-size: 4rem;
-  color: rgb(242, 139, 55);
+
+/* Input Field */
+input[type="text"] {
+  font-size: 1.4rem;
+  padding: 12px;
+  border: 2px solid #7e57c2; /* Soft purple border */
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  background-color: #fafaff; /* Very light purple */
+  color: #2c3e50;
 }
-button{
-  font-size: 1.7rem;
+
+/* Buttons */
+button {
+  font-size: 1.3rem;
   font-weight: bold;
-  padding: 10px 20px;
-  color: white;
+  padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
-}
-.add-button{
-  background-color: rgb(17, 225, 17);
-  margin-left: 2rem;
-  color: black;
-  border: #153f04 2px solid;
-}
-.add-button:hover{
-  background-color: #319f05;
-}
-.delete-button{
-  background-color: red;
-}
-.delete-button:hover{
-  background-color: maroon;
-}
-.moveup-button{
-  background-color: rgb(91, 91, 233);
-}
-.moveup-button:hover{
-  background-color: rgb(17, 17, 103);
-}
-.movedown-button{
-  background-color: rgb(91, 91, 233);
-}
-.movedown-button:hover{
-  background-color: rgb(17, 17, 103);
+  transition: all 0.3s ease;
+  color: white;
 }
 
-input[type="text"]{
-  font-size: 1.6rem;
-  padding: 10px;
-  border: 2px solid black;
-  border-radius: 5px;
-  color: black;
+/* Add Button - Teal */
+.add-button {
+  background-color: #00897b;
 }
-ol{
+.add-button:hover {
+  background-color: #00695c;
+  transform: scale(1.05);
+}
+
+/* Delete Button - Coral */
+.delete-button {
+  background-color: #ff6f61;
+}
+.delete-button:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+}
+
+/* Move Up & Down Buttons - Deep Purple */
+.moveup-button, .movedown-button {
+  background-color: #7e57c2;
+}
+.moveup-button:hover, .movedown-button:hover {
+  background-color: #5e35b1;
+  transform: scale(1.05);
+}
+
+/* Notes List */
+ol {
   padding: 0;
 }
-li{
-  font-size: 2rem;
+
+/* Individual Note */
+li {
+  font-size: 1.6rem;
   font-weight: bold;
   padding: 15px;
-  background-color: wheat;
+  background-color: #f5e1ff; /* Soft lavender */
   margin-bottom: 10px;
-  border:3px solid rgb(181, 180, 180);
-  border-radius: 5px;
+  border: 2px solid #d1c4e9;
+  border-radius: 8px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
 }
-.text{
-  flex:1;
+
+/* Note Text */
+.text {
+  flex: 1;
+  color: #2c3e50; /* Dark navy */
 }
-.delete-button, .movedown-button, .moveup-button{
+
+/* Button Spacing */
+.delete-button, .movedown-button, .moveup-button {
   margin-left: 10px;
   padding: 8px 12px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
-.outlined-text {
-  text-shadow: 
-    -1px -1px 0px rgb(134, 3, 3),  
-     1px -1px 0px rgb(134,3,3),  
-    -1px  1px 0px rgb(134,3,3),  
-     1px  1px 0px rgb(134,3,3);
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  
+  input[type="text"] {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+  
+  li {
+    font-size: 1.4rem;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .delete-button, .movedown-button, .moveup-button {
+    margin-left: 0;
+    margin-top: 8px;
+    width: 100%;
+  }
 }
